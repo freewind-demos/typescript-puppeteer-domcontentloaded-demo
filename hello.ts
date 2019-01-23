@@ -11,6 +11,11 @@ async function run() {
     page.waitForNavigation({waitUntil: 'domcontentloaded'})
   ]);
 
+  await Promise.all([
+    page.click('#link'),
+    page.waitForNavigation({waitUntil: 'domcontentloaded'})
+  ]);
+
   await browser.close();
 }
 

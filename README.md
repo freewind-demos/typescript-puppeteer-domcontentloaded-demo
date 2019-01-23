@@ -1,5 +1,10 @@
-TypeScript Puppeteer DonContentLoaded Demo
+TypeScript Puppeteer DomContentLoaded Demo
 ==========================================
+
+I found puppeteer's `page.waitForNavigation({waitUntil: 'domcontentloaded'})` work on 2 cases:
+
+1. The page fires `DOMContentLoaded` event
+2. Click on a link with `href='#'`. Browser doesn't fire an `DOMContentLoaded` event in this case.
 
 ```
 npm install -g puppeteer

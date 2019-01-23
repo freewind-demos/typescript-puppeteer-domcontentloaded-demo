@@ -4,8 +4,12 @@ async function run() {
   const browser = await puppeteer.launch({headless: false});
   const page = await browser.newPage();
 
-  console.log('open github');
-  await page.goto("http://github.com");
+  page.setDefaultNavigationTimeout(1000);
+
+  await Promise.all([
+    page.goto("http://localhost:8989/index.html"),
+    page.waitForNavigation({waitUntil: 'domcontentloaded'})
+  ]);
 
   await browser.close();
 }

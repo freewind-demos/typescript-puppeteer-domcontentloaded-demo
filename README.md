@@ -20,5 +20,5 @@ and
 npm run demo
 ```
 
-in two commond lines.
+in two command lines.
 

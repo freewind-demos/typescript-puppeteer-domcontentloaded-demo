@@ -6,11 +6,13 @@ async function run() {
 
   page.setDefaultNavigationTimeout(1000);
 
+  console.log('open index page');
   await Promise.all([
     page.goto("http://localhost:8989/index.html"),
     page.waitForNavigation({waitUntil: 'domcontentloaded'})
   ]);
 
+  console.log('click on link');
   await Promise.all([
     page.click('#link'),
     page.waitForNavigation({waitUntil: 'domcontentloaded'})
